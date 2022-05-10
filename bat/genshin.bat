@@ -1,7 +1,7 @@
 @echo off
 %1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
 cd /d "%~dp0"
-cd /d "D:\Ruida\Documents\Grasscutter-development\bat"
+cd /d "D:\Ruida\Documents\Grasscutter\bat"
 start wt -w /k mongodb.bat
 choice /t 1 /d y /n >nul
 start wt -w /k grasscutter.bat
