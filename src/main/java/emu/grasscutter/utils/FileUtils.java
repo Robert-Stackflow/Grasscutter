@@ -76,19 +76,18 @@ public final class FileUtils {
 	}
 
 	// From https://mkyong.com/java/java-read-a-file-from-resources-folder/
-	public static List<Path> getPathsFromResource(String folder) throws URISyntaxException, IOException {
+	public static List<Path> getPathsFromResource(String folder) throws URISyntaxException {
 		List<Path> result = null;
-		
-		// Get path of the current running JAR
-		String jarPath = Grasscutter.class.getProtectionDomain()
+
+		// Get pathUri of the current running JAR
+		URI pathUri = Grasscutter.class.getProtectionDomain()
 				.getCodeSource()
 				.getLocation()
-				.toURI()
-				.getPath();
+				.toURI();
 
 		try {
 			// file walks JAR
-			URI uri = URI.create("jar:file:" + jarPath);
+			URI uri = URI.create("jar:file:" + pathUri.getRawPath());
 			try (FileSystem fs = FileSystems.newFileSystem(uri, Collections.emptyMap())) {
 				result = Files.walk(fs.getPath(folder))
 						.filter(Files::isRegularFile)
@@ -96,10 +95,15 @@ public final class FileUtils {
 			}
 		} catch (Exception e) {
 			// Eclipse puts resources in its bin folder
-			File f = new File(jarPath + "defaults/data/");
+			File f = new File(System.getProperty("user.dir") + folder);
+			
+			if (!f.exists() || f.listFiles().length == 0) {
+				return null;
+			}
+			
 			result = Arrays.stream(f.listFiles()).map(File::toPath).toList();
 		}
-		
+
 		return result;
 	}
 

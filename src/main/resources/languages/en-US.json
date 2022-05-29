@@ -24,6 +24,7 @@
       "account": {
         "login_attempt": "[Dispatch] Client %s is trying to log in.",
         "login_success": "[Dispatch] Client %s logged in as %s.",
+        "login_max_player_limit": "[Dispatch] Client %s failed to log in: The number of online players has reached the limit",
         "login_token_attempt": "[Dispatch] Client %s is trying to log in via token.",
         "login_token_error": "[Dispatch] Client %s failed to log in via token.",
         "login_token_success": "[Dispatch] Client %s logged in via token as %s.",
@@ -35,7 +36,8 @@
         "account_cache_error": "Game account cache information error.",
         "session_key_error": "Wrong session key.",
         "username_error": "Username not found.",
-        "username_create_error": "Username not found, create failed."
+        "username_create_error": "Username not found, create failed.",
+        "server_max_player_limit": "The number of online players has reached the limit"
       },
       "router_error": "[Dispatch] Unable to attach router."
     },
@@ -86,7 +88,11 @@
       "argument_error": "Invalid arguments.",
       "clear_target": "Target cleared.",
       "set_target": "Subsequent commands will target @%s by default.",
-      "need_target": "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID."
+      "set_target_online": "@%s is online. Some commands may require an offline target.",
+      "set_target_offline": "@%s is offline. Some commands may require an online target.",
+      "need_target": "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID.",
+      "need_target_online": "This command requires an online target UID, but current target is offline. Add a different <@UID> argument or set a persistent target with /target @UID.",
+      "need_target_offline": "This command requires an offline target UID, but current target is online. Add a different <@UID> argument or set a persistent target with /target @UID."
     },
     "status": {
       "enabled": "Enabled",
@@ -186,7 +192,7 @@
       "server_kick_player": "Kicking player [%s:%s]...",
       "description": "Kicks the specified player from the server (WIP)"
     },
-    "kill": {
+    "killall": {
       "usage": "Usage: killall [playerUID] [sceneID]",
       "scene_not_found_in_player_world": "Scene not found in player world.",
       "kill_monsters_in_scene": "Killing %s monsters in scene %s.",
@@ -240,6 +246,7 @@
     },
     "resetShopLimit": {
       "usage": "Usage: /resetshop <player ID>",
+      "success": "Reset complete.",
       "description": "Reset target player's shop refresh time"
     },
     "sendMail": {
@@ -383,8 +390,7 @@
       "title": "Banner Details",
       "available_five_stars": "Available 5-star Items",
       "available_four_stars": "Available 4-star Items",
-      "available_three_stars": "Available 3-star Items",
-      "template_missing": "data/gacha_details.html is missing."
+      "available_three_stars": "Available 3-star Items"
     }
   },
   "documentation": {
