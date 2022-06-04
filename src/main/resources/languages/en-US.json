@@ -134,12 +134,12 @@
       "description": "Deletes unequipped unlocked items, including yellow rarity ones from your inventory"
     },
     "coop": {
-      "usage": "Usage: coop <playerID> <target playerID>",
+      "usage": "Usage: coop <playerID> [host UID]",
       "success": "Summoned %s to %s's world.",
       "description": "Forces someone to join the world of others"
     },
     "enter_dungeon": {
-      "usage": "Usage: enterdungeon <dungeon ID>",
+      "usage": "Usage: enterdungeon <dungeonID>",
       "changed": "Changed to dungeon %s.",
       "not_found_error": "Dungeon does not exist.",
       "in_dungeon_error": "You are already in that dungeon.",
@@ -159,7 +159,7 @@
       "description": "Gives the player a specified artifact"
     },
     "giveChar": {
-      "usage": "Usage: givechar <player> <itemID|itemName> [amount]",
+      "usage": "Usage: givechar <player> <avatarID> [level]",
       "given": "Given %s with level %s to %s.",
       "invalid_avatar_id": "Invalid avatar ID.",
       "invalid_avatar_level": "Invalid avatar level.",
@@ -167,7 +167,7 @@
       "description": "Gives the player a specified character"
     },
     "give": {
-      "usage": "Usage: give <player> <itemID|itemName> [amount] [level]",
+      "usage": "Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
       "refinement_only_applicable_weapons": "Refinement is only applicable to weapons.",
       "refinement_must_between_1_and_5": "Refinement must be between 1 and 5.",
       "given": "Given %s of %s to %s.",
@@ -199,7 +199,7 @@
       "description": "Kill all entities"
     },
     "killCharacter": {
-      "usage": "Usage: /killcharacter [playerID]",
+      "usage": "Usage: killcharacter [playerID]",
       "success": "Killed %s's current character.",
       "description": "Kills the players current character"
     },
@@ -227,7 +227,7 @@
       "description": "Get coordinates"
     },
     "quest": {
-      "usage": "quest <add|finish> [quest ID]",
+      "usage": "quest <add|finish> [questID]",
       "added": "Quest %s added.",
       "finished": "Finished quest %s.",
       "not_found": "Quest not found.",
@@ -245,26 +245,26 @@
       "description": "Resets the constellation level on your current active character, you will need to relog after using the command to see any changes"
     },
     "resetShopLimit": {
-      "usage": "Usage: /resetshop <player ID>",
+      "usage": "Usage: resetshop <playerID>",
       "success": "Reset complete.",
       "description": "Reset target player's shop refresh time"
     },
     "sendMail": {
-      "usage": "Usage: give [player] <itemID|itemName> [amount]",
+      "usage": "Usage: sendmail <userID|all|help> [templateID]",
       "user_not_exist": "The user with an ID of '%s' does not exist.",
-      "start_composition": "Starting composition of message.\nPlease use `/sendmail <title>` to continue.\nYou can use `/sendmail stop` at any time.",
+      "start_composition": "Starting composition of message.\nPlease use '/sendmail <title>' to continue.\nYou can use '/sendmail stop' at any time.",
       "templates": "Mail templates coming soon implemented...",
-      "invalid_arguments": "Invalid arguments.\nUsage `/sendmail <userID|all|help> [templateID]`",
+      "invalid_arguments": "Invalid arguments.",
       "send_cancel": "Message sending cancelled.",
       "send_done": "Message sent to user %s!",
       "send_all_done": "Message sent to all users!",
-      "not_composition_end": "Message composition not at final stage.\nPlease use `/sendmail %s` or `/sendmail stop` to cancel",
-      "please_use": "Please use `/sendmail %s`",
+      "not_composition_end": "Message composition not at final stage.\nPlease use '/sendmail %s' or '/sendmail stop' to cancel",
+      "please_use": "Please use '/sendmail %s'",
       "set_title": "Message title set as '%s'.\nUse '/sendmail <content>' to continue.",
       "set_contents": "Message contents set as '%s'.\nUse '/sendmail <sender>' to continue.",
       "set_message_sender": "Message sender set as '%s'.\nUse '/sendmail <itemID|itemName|finish> [amount] [level]' to continue.",
-      "send": "Attached %s of %s (level %s) to the message.\nContinue adding more items or use `/sendmail finish` to send the message.",
-      "invalid_arguments_please_use": "Invalid arguments \n Please use `/sendmail %s`",
+      "send": "Attached %s of %s (level %s) to the message.\nContinue adding more items or use '/sendmail finish' to send the message.",
+      "invalid_arguments_please_use": "Invalid arguments.\n Please use '/sendmail %s'",
       "title": "<title>",
       "message": "<message>",
       "sender": "<sender>",
@@ -306,6 +306,7 @@
     "spawn": {
       "usage": "Usage: spawn <entityID> [amount] [level(monster only)]",
       "success": "Spawned %s of %s.",
+      "limit_reached": "Scene spawn limit reached. Spawning %s entities instead.",
       "description": "Spawns an entity near you"
     },
     "stop": {
@@ -353,15 +354,15 @@
       "description": "Teleports all players in your world to your position"
     },
     "teleport": {
-      "usage_server": "Usage: /tp @<player ID> <x> <y> <z> [scene ID]",
-      "usage": "Usage: /tp [@<player ID>] <x> <y> <z> [scene ID]",
+      "usage_server": "Usage: tp @<playerID> <x> <y> <z> [sceneID]",
+      "usage": "Usage: tp [@<playerID>] <x> <y> <z> [sceneID]",
       "specify_player_id": "You must specify a player ID.",
       "invalid_position": "Invalid position.",
       "success": "Teleported %s to %s, %s, %s in scene %s.",
       "description": "Change the player's position"
     },
     "weather": {
-      "usage": "Usage: weather <weatherID> [climateID]",
+      "usage": "Usage: weather <weatherID> <climateID>",
       "success": "Changed weather to %s with climate %s.",
       "invalid_id": "Invalid ID.",
       "description": "Changes the weather"

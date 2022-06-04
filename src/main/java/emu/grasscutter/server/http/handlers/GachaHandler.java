@@ -35,7 +35,7 @@ public final class GachaHandler implements Router {
         express.get("/gacha", GachaHandler::gachaRecords);
         express.get("/gacha/details", GachaHandler::gachaDetails);
         
-        express.useStaticFallback("/gacha/mappings", this.gachaMappings, Location.EXTERNAL);
+        express.useStaticFallback("/gacha/mappings", gachaMappings, Location.EXTERNAL);
     }
     
     private static void gachaRecords(Request request, Response response) {
@@ -52,7 +52,7 @@ public final class GachaHandler implements Router {
             response.status(403).send("Requested account was not found");
             return;
         }
-        Player player = Grasscutter.getGameServer().getPlayerByUid(account.getPlayerUid());
+        Player player = Grasscutter.getGameServer().getPlayerByAccountId(account.getId());
         if (player == null) {
             response.status(403).send("No player associated with requested account");
             return;
@@ -88,7 +88,7 @@ public final class GachaHandler implements Router {
             response.status(403).send("Requested account was not found");
             return;
         }
-        Player player = Grasscutter.getGameServer().getPlayerByUid(account.getPlayerUid());
+        Player player = Grasscutter.getGameServer().getPlayerByAccountId(account.getId());
         if (player == null) {
             response.status(403).send("No player associated with requested account");
             return;

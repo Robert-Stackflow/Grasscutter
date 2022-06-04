@@ -1,5 +1,5 @@
 @echo off
-title Proxy
+title Mitmproxy
 cd ..
 mitmdump -s proxy.py -k
 pause
