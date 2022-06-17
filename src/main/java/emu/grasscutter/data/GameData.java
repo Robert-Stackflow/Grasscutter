@@ -51,7 +51,8 @@ public class GameData {
 	private static final Int2ObjectMap<WeaponPromoteData> weaponPromoteDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<WeaponCurveData> weaponCurveDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<EquipAffixData> equipAffixDataMap = new Int2ObjectOpenHashMap<>();
-	
+
+	private static final Int2ObjectMap<EnvAnimalGatherConfigData> envAnimalGatherConfigDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<MonsterData> monsterDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<NpcData> npcDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<GadgetData> gadgetDataMap = new Int2ObjectOpenHashMap<>();
@@ -76,6 +77,7 @@ public class GameData {
 	private static final ArrayList<CodexReliquaryData> codexReliquaryArrayList = new ArrayList<>();
 	private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardData> rewardDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<WorldAreaData> worldAreaDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<WorldLevelData> worldLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<DailyDungeonData> dailyDungeonDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<DungeonData> dungeonDataMap = new Int2ObjectOpenHashMap<>();
@@ -86,6 +88,7 @@ public class GameData {
 	private static final Int2ObjectMap<TowerFloorData> towerFloorDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerLevelData> towerLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerScheduleData> towerScheduleDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<ForgeData> forgeDataMap = new Int2ObjectOpenHashMap<>();
 
 	// Cache
 	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
@@ -240,6 +243,9 @@ public class GameData {
 	public static Int2ObjectMap<MonsterData> getMonsterDataMap() {
 		return monsterDataMap;
 	}
+	public static Int2ObjectMap<EnvAnimalGatherConfigData> getEnvAnimalGatherConfigDataMap() {
+		return envAnimalGatherConfigDataMap;
+	}
 
 	public static Int2ObjectMap<NpcData> getNpcDataMap() {
 		return npcDataMap;
@@ -314,6 +320,10 @@ public class GameData {
 
 	public static ArrayList<CodexReliquaryData> getcodexReliquaryArrayList(){return codexReliquaryArrayList;}
 
+	public static Int2ObjectMap<WorldAreaData> getWorldAreaDataMap() {
+		return worldAreaDataMap;
+	}
+	
 	public static Int2ObjectMap<WorldLevelData> getWorldLevelDataMap() {
 		return worldLevelDataMap;
 	}
@@ -362,5 +372,9 @@ public class GameData {
 
 	public static Int2ObjectMap<QuestData> getQuestDataMap() {
 		return questDataMap;
+	}
+
+	public static Int2ObjectMap<ForgeData> getForgeDataMap() {
+		return forgeDataMap;
 	}
 }
